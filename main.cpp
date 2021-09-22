@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool 
+ double
+ char
+ unsigned int
  
  
  
@@ -60,9 +60,31 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    int alpha = 1;
+    int bravo = -52;
+    int charles = 3;
 
+    float cat = 5.0f; 
+    float dog = 10.56f;
+    float bird = 36.4545785f;
+
+    bool isThisCool = true;
+    bool areBirdsReal = false;
+    bool doAndroidsDreamOfElectricSheep = false;
+
+    double twoCats = 6.5;
+    double twoDogs = 6.812345678945627;
+    double twoBirds = 75.5764;
+
+    char word = 'o';
+    char excel = 'p';
+    char ascii = 56;
+
+    unsigned int a = 59;
+    unsigned int b = 4;
+    unsigned int c = 56;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, alpha, bravo, charles, cat, dog, bird, isThisCool, areBirdsReal,  doAndroidsDreamOfElectricSheep, twoCats, twoDogs, twoBirds, word, excel, ascii, a, b, c); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -77,45 +99,86 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 } 
 
 /*
- 1)
+ 1) int
  */
-
+bool legatoCheck(bool notePlaying, bool inRange)
+{ 
+    ignoreUnused(notePlaying, inRange);
+    return {};
+}
 /*
  2)
  */
 
+int limit(int value, int min = 1, int max = 127)
+{ 
+    ignoreUnused(value, min, max);
+    return {};
+}
 /*
  3)
  */
-
+int chooseString(bool isFirstNote, int eventNote, int handPosition)
+{ 
+    ignoreUnused(isFirstNote, eventNote, handPosition);
+    return {};
+}
 /*
  4)
  */
-
+int moveCapo(int fretNumber)
+{ 
+    ignoreUnused(fretNumber);
+    return {};
+}
 /*
  5)
  */
-
+float setLegatoTiming(int noteVelocity, double expConstant)
+{ 
+    ignoreUnused(noteVelocity, expConstant);
+    return {};
+}
 /*
  6)
  */
-
+int loadAudioFileIntoBuffer(int bufferSize = 1024)
+{ 
+    ignoreUnused(bufferSize);
+    return {};
+}
 /*
  7)
  */
-
+float calculateTotalPrice(float retailPrice, float discountPercent = 20.0f)
+{ 
+    ignoreUnused(retailPrice, discountPercent);
+    return {};
+}
 /*
  8)
  */
-
+bool previousNoteLegato(bool notePlaying, int lastNote)
+{ 
+    ignoreUnused(notePlaying, lastNote);
+    return {};
+}
 /*
  9)
  */
-
+int calculateControllerValue(int noteVelocity, int timingOffset = 120)
+{ 
+    ignoreUnused(noteVelocity, timingOffset);
+    return {};
+}
 /*
  10)
  */
-
+int findAsciiCode(char symbol)
+{ 
+    ignoreUnused(symbol);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -136,27 +199,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto playLegato = legatoCheck(true, true);
     //2)
-    
+    auto controllerOutput = limit(64);
     //3)
-    
+    auto stringToPlay = chooseString(false, 62, 4);
     //4)
-    
+    auto capoPosition = moveCapo(5);
     //5)
-    
+    auto intervalDuration = setLegatoTiming(75, 4.1524688753);
     //6)
-    
+    auto impulseResponse = loadAudioFileIntoBuffer();
     //7)
-    
+    auto priceToPay = calculateTotalPrice(1300.0f);
     //8)
-    
+    auto trillFlag = previousNoteLegato(56, false);
     //9)
-    
+    auto controllerValue = calculateControllerValue(45, 0);
     //10)
+    auto asciiCode = findAsciiCode('~');
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, playLegato, controllerOutput, stringToPlay, capoPosition, intervalDuration, impulseResponse, priceToPay, trillFlag, controllerValue, asciiCode);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
